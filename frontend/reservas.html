@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Reservas | Promissum Palace
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <h1>
+            Promissum Palace
+        </h1>
+
+        <p>
+            Gerenciamento de Reservas
+        </p>
+
+    </header>
+
+    <main class="container">
+
+
+        <section class="card">
+
+            <h2>
+                Criar Reserva
+            </h2>
+
+            <form id="formReserva">
+
+                <div class="campo">
+
+                    <label>
+                        Tutor
+                    </label>
+
+                    <select
+                        id="tutor"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>
+                        Quarto
+                    </label>
+
+                    <select
+                        id="quarto"
+                        required
+                    >
+
+                        <option value="">
+                            Selecione
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="campo">
+
+                    <label>
+                        Check-in
+                    </label>
+
+                    <input
+                        type="date"
+                        id="checkin"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label>
+                        Check-out
+                    </label>
+
+                    <input
+                        type="date"
+                        id="checkout"
+                        required
+                    >
+
+                </div>
+
+                <div class="campo">
+
+                    <label>
+                        Serviços Extras
+                    </label>
+
+                    <div id="servicosContainer">
+
+                    </div>
+
+                </div>
+
+                <div class="valor-total">
+
+                    Valor Total:
+
+                    <span id="valorTotal">
+                        R$ 0.00
+                    </span>
+
+                </div>
+
+                <button type="submit">
+
+                    Criar Reserva
+
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- LISTAGEM -->
+        <section class="card">
+
+            <div class="topo-lista">
+
+                <h2>
+                    Lista de Reservas
+                </h2>
+
+                <div class="barra-pesquisa">
+
+                    <input
+                        type="text"
+                        id="pesquisaReserva"
+                        placeholder="Pesquisar por ID"
+                    >
+
+                    <button
+                        type="button"
+                        onclick="pesquisarReservas()"
+                    >
+
+                        Pesquisar
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Tutor</th>
+
+                        <th>Quarto</th>
+
+                        <th>Check-in</th>
+
+                        <th>Check-out</th>
+
+                        <th>Status</th>
+
+                        <th>Serviços</th>
+
+                        <th>Total</th>
+
+                        <th>Ações</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="tabelaReservas">
+
+                </tbody>
+
+            </table>
+        <div class="paginacao">
+            
+            <button onclick="paginaAnteriorReservas()">Anterior</button>
+
+            <span id="infoPaginaReservas"></span>
+
+            <button onclick="proximaPaginaReservas()">Próximo</button>
+        </div>
+
+        </section>
+
+    </main>
+
+    <script src="js/reservas.js"></script>
+
+</body>
+
+</html>

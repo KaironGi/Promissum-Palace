@@ -1,0 +1,360 @@
+:root {
+    /* ===== PALETA CLARA (ICE GRAY / SaaS STYLE) ===== */
+    --bg: #f1f5f9;
+    --surface: #ffffff;
+    --surface-2: #e2e8f0;
+
+    --text: #0f172a;
+    --text-muted: #64748b;
+
+    --primary: #2563eb;
+    --primary-hover: #1d4ed8;
+
+    --success: #16a34a;
+    --danger: #dc2626;
+
+    --border: #cbd5e1;
+
+    --s1: 8px;
+    --s2: 12px;
+    --s3: 16px;
+    --s4: 24px;
+    --s5: 32px;
+
+    --r1: 10px;
+    --r2: 14px;
+
+    --shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BASE
+========================= */
+body {
+    font-family: Inter, system-ui, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+/* =========================
+   HEADER
+========================= */
+.topo {
+    background: var(--surface);
+    padding: var(--s5);
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.topo h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.topo p {
+    color: var(--text-muted);
+    margin-top: var(--s1);
+}
+
+/* =========================
+   LAYOUT GLOBAL
+========================= */
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: var(--s5) auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--s4);
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+    background: var(--surface);
+    padding: var(--s4);
+    border-radius: var(--r2);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+}
+
+.card h2 {
+    margin-bottom: var(--s3);
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+/* =========================
+   FORM
+========================= */
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s3);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s1);
+}
+
+label {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+input,
+select {
+    padding: var(--s2);
+    border: 1px solid var(--border);
+    border-radius: var(--r1);
+    background: #fff;
+    color: var(--text);
+    outline: none;
+    transition: 0.2s;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   BUTTON
+========================= */
+button {
+    grid-column: span 2;
+    padding: 14px;
+    border: none;
+    border-radius: var(--r1);
+    background: var(--primary);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* =========================
+   TABLE
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--surface-2);
+}
+
+th,
+td {
+    padding: var(--s3);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+tbody tr:hover {
+    background: #f8fafc;
+}
+
+/* =========================
+   STATUS
+========================= */
+.status-ativo {
+    color: var(--success);
+    font-weight: 600;
+}
+
+.status-a {
+    color: var(--danger);
+    font-weight: 600;
+}
+
+/* =========================
+   LINKS
+========================= */
+nav {
+    display: flex;
+    gap: var(--s3);
+    flex-wrap: wrap;
+}
+
+a {
+    text-decoration: none;
+    background: var(--surface);
+    color: var(--text);
+    padding: var(--s2) var(--s3);
+    border-radius: var(--r1);
+    border: 1px solid var(--border);
+    transition: 0.2s;
+}
+
+a:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* =========================
+   SEARCH BAR
+========================= */
+.barra-pesquisa {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* =========================
+   HOME (INDEX)
+========================= */
+
+/*
+   Só aplica quando existir .sidebar
+   NÃO quebra outras páginas
+*/
+body:has(.sidebar) {
+    display: flex;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 280px;
+    min-height: 100vh;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    padding: var(--s5);
+    box-shadow: var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* Título sidebar */
+.sidebar h1 {
+    font-size: 1.8rem;
+    margin-bottom: var(--s1);
+}
+
+.sidebar p {
+    color: var(--text-muted);
+    margin-bottom: var(--s5);
+}
+
+/* Menu lateral */
+.menu-lateral {
+    display: flex;
+    flex-direction: column;
+    gap: var(--s2);
+}
+
+.menu-lateral a {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    font-weight: 500;
+}
+
+/* Container do index */
+body:has(.sidebar) .container {
+    flex: 1;
+    width: auto;
+    max-width: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0;
+    padding: var(--s5);
+}
+
+/* Card central index */
+body:has(.sidebar) .card {
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+}
+
+/* =========================
+   HOME LEGACY
+========================= */
+.container-home {
+    width: 100%;
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-home .card {
+    width: 100%;
+    max-width: 600px;
+    padding: 40px;
+    text-align: center;
+}
+
+.container-home nav {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+
+    form {
+        grid-template-columns: 1fr;
+    }
+
+    button {
+        grid-column: span 1;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    /* Sidebar responsiva */
+    body:has(.sidebar) {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    body:has(.sidebar) .container {
+        width: 100%;
+        padding: var(--s4);
+    }
+}

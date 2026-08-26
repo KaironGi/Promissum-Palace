@@ -1,0 +1,217 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Tutores | Promissum Palace</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+<body>
+
+    <header class="topo">
+
+        <h1>Promissum Palace</h1>
+
+        <p>Gerenciamento de Tutores</p>
+
+    </header>
+
+
+    <main class="container">
+
+
+        <!-- CADASTRO -->
+
+        <section class="card">
+
+            <h2>Cadastrar Tutor</h2>
+
+            <form id="formTutor">
+
+
+                <div class="campo">
+
+                    <label for="nome">
+                        Nome
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite o nome"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="documento">
+                        CPF / CNPJ
+                    </label>
+
+                    <input
+                        type="text"
+                        id="documento"
+                        placeholder="Digite o CPF ou CNPJ"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="telefone">
+                        Telefone
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        placeholder="(11) 99999-9999"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="campo">
+
+                    <label for="email">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Digite o email"
+                        required
+                    >
+
+                </div>
+
+
+                <button type="submit">
+                    Cadastrar
+                </button>
+
+
+            </form>
+
+        </section>
+
+
+        <!-- LISTA -->
+
+        <section class="card">
+
+
+            <div class="topo-lista">
+
+                <h2>Lista de Tutores</h2>
+
+
+                <div class="barra-pesquisa">
+
+                    <input
+                        type="text"
+                        id="pesquisaTutor"
+                        placeholder="Pesquisar por nome ou CPF"
+                    >
+
+
+                    <button
+                        type="button"
+                        onclick="pesquisarTutores()"
+                    >
+                        Pesquisar
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Nome</th>
+
+                        <th>CPF / CNPJ</th>
+
+                        <th>Telefone</th>
+
+                        <th>Email</th>
+
+                        <th>Ações</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tabelaTutores">
+
+                </tbody>
+
+            </table>
+
+
+            <div class="paginacao">
+
+                <button
+                    type="button"
+                    onclick="paginaAnterior()"
+                >
+                    Anterior
+                </button>
+
+
+                <span id="infoPagina">
+                    Página 1 de 1
+                </span>
+
+
+                <button
+                    type="button"
+                    onclick="proximaPagina()"
+                >
+                    Próximo
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <script src="js/tutores.js"></script>
+
+</body>
+
+</html>
+```
